@@ -1,10 +1,10 @@
 #include <iostream>
 #include <stdlib.h>
 
-#define HEIGHT 5																			// высота мира
-#define WIDTH 5																				// ширина мира
+#define HEIGHT 5																			// РІС‹СЃРѕС‚Р° РјРёСЂР°
+#define WIDTH 5																				// С€РёСЂРёРЅР° РјРёСЂР°
 
-void RandomWorld(int world[HEIGHT][WIDTH]){													// случайный мир
+void RandomWorld(int world[HEIGHT][WIDTH]){													// СЃР»СѓС‡Р°Р№РЅС‹Р№ РјРёСЂ
 	for (int i = 0; i < HEIGHT; ++i){
 		for (int j = 0; j < WIDTH; ++j)
 			world[i][j] = rand() % 2;
@@ -12,7 +12,7 @@ void RandomWorld(int world[HEIGHT][WIDTH]){													// случайный мир
 };
 
 
-void GameOfLife(unsigned int iterations, int world[HEIGHT][WIDTH]){
+void GameOfLife(int world[HEIGHT][WIDTH]){
 	int xCoord = 0;
 	int yCoord = 0;
 	int neighbors = 0;
@@ -47,7 +47,6 @@ void GameOfLife(unsigned int iterations, int world[HEIGHT][WIDTH]){
 int main() {
 	int world[HEIGHT][WIDTH];
 	RandomWorld(world);
-	unsigned  int itt = 0;
 	for (char i = 0; i < HEIGHT; i++) {
 		for (char j = 0; j < WIDTH; j++) {
 			std::cout << world[i][j];
@@ -55,7 +54,7 @@ int main() {
 		std::cout << std::endl;
 	}
 
-	GameOfLife(itt, world);
+	GameOfLife(world);
 
 	getchar();
 }
